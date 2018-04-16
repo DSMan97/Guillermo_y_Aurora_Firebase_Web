@@ -18,7 +18,15 @@ export default {
     clickDeBotonRegistrase:function(event){
       //console.log("!!!!!!!!!!!!!!!!!!!");
       this.blLoginVisible=false;
-      this.sTituloLogin="Register!"
-  }
+      this.sTituloLogin="LOGIN"
+  },
+  // clickDeBotonRegistraseEnvio:function(event) {
+  //   this.btnEnvioDatos=;
+  // }
+  clickDeBotonCancelar:function(event){
+    //console.log("!!!!!!!!!!!!!!!!!!!");
+    this.blLoginVisible=true;
+    this.sTituloRegistro="Login!"
+}
 }
 }
