@@ -4,7 +4,7 @@
   <div class="Login" v-show="blLoginVisible">
         <h1>Panel Login</h1>
         <h1>{{sTituloLogin}}</h1>
-        <button type="button" >Logearse</button>
+        <button type="button" v-on:click="clickDeBotonLogearse" >Logearse</button>
         <button type="button" v-on:click="clickDeBotonRegistrase" >Registrarse</button>
   </div>
   <div class="preRegister" v-show="!blLoginVisible" >
@@ -12,9 +12,11 @@
         <button type="button" >Registrarse</button>
         <button type="button" v-on:click="clickDeBotonCancelar" >Cancelar</button>
   </div>
-  <div class="Logearse">
-    <input type="text" name="Usuario">
+  <div class="Logearse" v-show="" >
 
+    Usuario: <input type="text" name="Usuario"> <br>
+    Contraseña: <input type="text" name="Contraseña" >
+<button type="submit" name="OK">OK</button>
 
   </div>
 
