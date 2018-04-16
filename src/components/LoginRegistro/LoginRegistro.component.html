@@ -1,0 +1,16 @@
+
+<section class="login-registro">
+  <h1>principal Component</h1>
+  <div class="Login" v-show="blLoginVisible">
+        <h1>Panel Login</h1>
+        <h1>{{sTituloLogin}}</h1>
+        <button type="button" >Logearse</button>
+        <button type="button" v-on:click="clickDeBotonRegistrase" >Registrarse</button>
+  </div>
+  <div class="preRegister" v-show="!blLoginVisible" >
+        <h1>Panel Registro</h1>
+        <button type="button" >Registrarse</button>
+        <button type="button" >Cancelar</button>
+  </div>
+
+</section>
