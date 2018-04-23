@@ -5,7 +5,9 @@ export default {
   data () {
     return {
       blLoginVisible:true,
-      sTituloLogin:"LOGIN"
+      sTituloLogin:"LOGIN",
+      sEmail="g2@g2.com",
+      sPass="123456"
     }
   },
   computed: {
@@ -21,9 +23,14 @@ export default {
       this.blLogearseVisible=false;
       this.sTituloLogin="LOGIN"
   },
-  // clickDeBotonRegistraseEnvio:function(event) {
-  //   this.btnEnvioDatos=;
-  // },
+ clickDeBotonRegistraseAceptar:function(event) {
+   firebase.auth().signInWithEmailAndPassword(this.sEmail, this.sPass).catch(function(error) {
+     // Handle Errors here.
+     var errorCode = error.code;
+     var errorMessage = error.message;
+     // ...
+   });
+  },
   clickDeBotonCancelar:function(event){
     //console.log("!!!!!!!!!!!!!!!!!!!");
     this.blLoginVisible=true;
