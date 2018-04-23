@@ -41,13 +41,14 @@ export default {
     this.sTituloRegistro="Login!"
 },
 clickDeBotonLogearse:function (event) {
-this.blLogearseVisible=true;
-firebase.auth().signInWithEmailAndPassword(this.sLoginEmail, this.sLoginPass).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // ...
-});
+  this.blLogearseVisible=true;
+  firebase.auth().signInWithEmailAndPassword(this.sLoginEmail, this.sLoginPass).catch(function(error) {
+    // Handle Errors here.
+    alert(this.sRegisterEmail+"------------"+this.sRegisterPass);
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+  });
 
 }
 }
