@@ -30,6 +30,8 @@ export default {
 
    firebase.auth().createUserWithEmailAndPassword(this.sRegisterEmail, this.sRegisterPass).catch(function(error) {
   // Handle Errors here.
+  console.log("Registro");
+  alert("Te has Registrado correctamente"+this.sRegisterEmail);
   var errorCode = error.code;
   var errorMessage = error.message;
   // ...
@@ -44,9 +46,11 @@ clickDeBotonLogearse:function (event) {
   this.blLogearseVisible=true;
   firebase.auth().signInWithEmailAndPassword(this.sLoginEmail, this.sLoginPass).catch(function(error) {
     // Handle Errors here.
-    alert(this.sRegisterEmail+"------------"+this.sRegisterPass);
+    console.log("Login");
+    alert("Te has Logueado correctamente"+this.sLoginEmail);
     var errorCode = error.code;
     var errorMessage = error.message;
+
     // ...
   });
 
