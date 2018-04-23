@@ -7,8 +7,8 @@ export default {
     return {
       blLoginVisible:true,
       sTituloLogin:"LOGIN",
-      sEmail:"g2@g2.com",
-      sPass:"123456"
+      sRegisterEmail:"",
+      sRegisterPass:""
     }
   },
   computed: {
@@ -24,13 +24,14 @@ export default {
       this.blLogearseVisible=false;
       this.sTituloLogin="LOGIN";
   },
- clickDeBotonRegistraseAceptar:function(event) {
-   firebase.auth().signInWithEmailAndPassword(this.sEmail, this.sPass).catch(function(error) {
-     // Handle Errors here.
-     var errorCode = error.code;
-     var errorMessage = error.message;
-     // ...
-   });
+ clickDeBotonRegistrarseAceptar:function(event) {
+   alert(this.sRegisterEmail+"------------"+this.sRegisterPass);
+   firebase.auth().createUserWithEmailAndPassword(this.sRegisterEmail, this.sRegisterPass).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
   },
   clickDeBotonCancelar:function(event){
     //console.log("!!!!!!!!!!!!!!!!!!!");
@@ -39,7 +40,12 @@ export default {
 },
 clickDeBotonLogearse:function (event) {
 this.blLogearseVisible=true;
-
+// firebase.auth().signInWithEmailAndPassword(this.sRegisterEmail, this.sRegisterPass).catch(function(error) {
+//   // Handle Errors here.
+//   var errorCode = error.code;
+//   var errorMessage = error.message;
+//   // ...
+// });
 
 }
 }

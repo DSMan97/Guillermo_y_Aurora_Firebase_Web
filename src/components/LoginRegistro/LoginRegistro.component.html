@@ -7,13 +7,16 @@
 
 
               E-mail:  <br>
-               <input type="text" name="Usuario" id="email"> <br>
+               <input type="text" placeholder="Usuario" v-model="sRegisterEmail"> <br>
 
               Contraseña  <br>
-              <input type="text" name="Contraseña" id="pass" > <br>
+              <input type="password" placeholder="Contraseña" v-model="sRegisterPass"> <br>
 
-        <button type="button" v-on:click="clickDeBotonRegistraseAceptar">Registrarse</button>
-        <button type="button" v-on:click="clickDeBotonCancelar" >Cancelar</button>
+            Repita Contraseña  <br>
+              <input type="password" placeholder="Congirmar Contraseña" name="Contraseña"> <br>
+
+        <button type="button" v-on:click="clickDeBotonRegistrarseAceptar">Registrarse</button>
+        <button type="button" v-on:click="clickDeBotonCancelar">Cancelar</button>
 
 
 
@@ -25,7 +28,7 @@
       <h1>{{sTituloLogin}}</h1> -->
 
       Usuario:  <br>
-       <input type="text" placeholder="Unsuario" name="Usuario" id="usuario"> <br>
+       <input type="text" placeholder="Usuario" name="Usuario" id="usuario"> <br>
 
       Contraseña  <br>
       <input type="password" placeholder="Contraseña" name="Contraseña" id="pass" > <br>
