@@ -1,3 +1,4 @@
+import firebase from 'firebase'
 export default {
   name: 'login-registro',
   components: {},
@@ -6,8 +7,8 @@ export default {
     return {
       blLoginVisible:true,
       sTituloLogin:"LOGIN",
-      sEmail="g2@g2.com",
-      sPass="123456"
+      sEmail:"g2@g2.com",
+      sPass:"123456"
     }
   },
   computed: {
@@ -21,7 +22,7 @@ export default {
       //console.log("!!!!!!!!!!!!!!!!!!!");
       this.blLoginVisible=false;
       this.blLogearseVisible=false;
-      this.sTituloLogin="LOGIN"
+      this.sTituloLogin="LOGIN";
   },
  clickDeBotonRegistraseAceptar:function(event) {
    firebase.auth().signInWithEmailAndPassword(this.sEmail, this.sPass).catch(function(error) {
