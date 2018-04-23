@@ -1,8 +1,9 @@
 
 <section class="login-registro">
-  <h1>Bienvenido!</h1>
+  <!-- <h1>Bienvenido!</h1> -->
 
   <div class="preRegister" v-show="!blLoginVisible" >
+        <h1>Bienvenido!</h1>
         <h1>Panel Registro</h1>
 
 
@@ -25,8 +26,9 @@
   </div>
 <!-- <<<<<<< HEAD -->
 <div class="Login" v-show="blLoginVisible">
-      <!-- <h1>Panel Login</h1>
-      <h1>{{sTituloLogin}}</h1> -->
+    <h1 id="h1">Bienvenido!</h1>
+    <h1>Panel Login</h1>
+      <!-- <h1>{{sTituloLogin}}</h1> -->
 
       Usuario:  <br>
        <input type="text" placeholder="Usuario" v-model="sLoginEmail"> <br>
