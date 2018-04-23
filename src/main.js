@@ -16,7 +16,7 @@ var config = {
   messagingSenderId: '553153415320'
 };
 firebase.initializeApp(config);
-
+Vue.use(firebase)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
