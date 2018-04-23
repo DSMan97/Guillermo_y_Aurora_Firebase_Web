@@ -27,7 +27,7 @@ export default {
       this.sTituloLogin="LOGIN";
   },
  clickDeBotonRegistrarseAceptar:function(event) {
-   alert(this.sRegisterEmail+"------------"+this.sRegisterPass);
+
    firebase.auth().createUserWithEmailAndPassword(this.sRegisterEmail, this.sRegisterPass).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
