@@ -34,19 +34,20 @@ export default {
     clickDeBotonRegistrase:function(event){
       //console.log("!!!!!!!!!!!!!!!!!!!");
       this.blLoginVisible=false;
-      this.blLogearseVisible=false;
       this.sTituloLogin="LOGIN";
   },
  clickDeBotonRegistrarseAceptar:function(event) {
 
-   firebase.auth().createUserWithEmailAndPassword(this.sRegisterEmail, this.sRegisterPass).catch(function(error) {
+   firebase.auth().createUserWithEmailAndPassword(this.sRegisterEmail, this.sRegisterPass).then(function(user) {
   // Handle Errors here.
-  alert("No te has Registrado correctamente");
-  var errorCode = error.code;
-  var errorMessage = error.message;
+  alert("Te has Registrado correctamente");
+  //var errorCode = error.code;
+//  var errorMessage = error.message;
   // ...
-}).then(function (user){
-    alert("Te has Registrado correctamente");
+
+})(function ( error){
+    alert("No Te has Registrado correctamente");
+
   },
 );
 
@@ -57,21 +58,24 @@ export default {
     this.sTituloRegistro="Login!"
 },
 clickDeBotonLogearse:function (event) {
-  this.blLogearseVisible=true;
-  firebase.auth().signInWithEmailAndPassword(this.sLoginEmail, this.sLoginPass).catch(function(error) {
+  // this.blLogearseVisible=true;
+  firebase.auth().signInWithEmailAndPassword(this.sLoginEmail, this.sLoginPass).then(function(user) {
     // Handle Errors here.
-      alert("No te has Logueado correctamente");
-    var errorCode = error.code;
-    var errorMessage = error.message;
-
-
-    // ...
-  }).then(function (user){
       alert("Te has Logueado correctamente");
 
+      this.blLogearseVisible=false;
+
+    // ...
+  })(function (error){
+      alert("No Te has Logueado correctamente");
+      // var errorCode = error.code;
+      // var errorMessage = error.message;
     },
   );
 
-}
-}
+},
+  logout: function(event){
+    firebase.auth().signOut()
+    }
+  }
 }

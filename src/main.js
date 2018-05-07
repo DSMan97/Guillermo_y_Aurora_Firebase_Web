@@ -18,7 +18,7 @@ var config = {
 };
 firebase.initializeApp(config);
 Vue.mixin(props)
-// Vue.use(firebase)
+Vue.use(firebase)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
