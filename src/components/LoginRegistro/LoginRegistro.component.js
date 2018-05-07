@@ -57,6 +57,7 @@ clickDeBotonLogearse:function (event) {
     // ...
   }).then(function (user){
       alert("Te has Logueado correctamente");
+      this.principalVisibilidad=false;
     },
   );
 
