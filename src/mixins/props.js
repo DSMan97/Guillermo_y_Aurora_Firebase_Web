@@ -1,4 +1,4 @@
-export defaul{
+export default{
   computed:{
 checkLoggedInFirebase (){
 

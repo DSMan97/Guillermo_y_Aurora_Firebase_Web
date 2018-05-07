@@ -13,7 +13,7 @@ export default {
       sLoginPass:""
     }
   },
-  beforeCreated: function(){
+  created: function(){
       firebase.auth().onAuthStateChanged((user) => {
             if(user){
               this.props_blIsLoggedIn = true
@@ -68,8 +68,7 @@ clickDeBotonLogearse:function (event) {
     // ...
   }).then(function (user){
       alert("Te has Logueado correctamente");
-      this.blLogearseVisible=false;
-      this.blLoginVisible=false;
+
     },
   );
 
