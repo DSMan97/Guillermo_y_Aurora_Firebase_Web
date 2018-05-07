@@ -13,6 +13,17 @@ export default {
       sLoginPass:""
     }
   },
+  beforeCreated: function(){
+      firebase.auth().onAuthStateChanged((user) => {
+            if(user){
+              this.props_blIsLoggedIn = true
+
+            }
+            else {
+              this.props_blIsLoggedIn = false
+            }
+      });
+  },
   computed: {
 
   },

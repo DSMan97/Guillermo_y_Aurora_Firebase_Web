@@ -1,6 +1,8 @@
 
 <section class="login-registro">
   <!-- <h1>Bienvenido!</h1> -->
+<div class="loginregistroclass"  v-show="this.props_blIsLoggedIn">
+
 
   <div class="preRegister" v-show="!blLoginVisible" >
         <h1>Bienvenido!</h1>
@@ -50,5 +52,6 @@
 <button type="button" id="indie" v-on:click="">Indie</button>
 
 
+</div>
 </div>
 </section>
