@@ -44,13 +44,13 @@
 >>>>>>> fd7353194888326ebdc7912986ec4e686bf2ec66 -->
 <button type="button" v-on:click="clickDeBotonLogearse" >Logearse</button>
 <button type="button" v-on:click="clickDeBotonRegistrase" >Registrarse</button>
-
+<button type="button" v-on:click="clickDeBotonLogearseGoogle" >Loguearse con Google</button>
 
   </div>
 
 </div>
 <div class="logged" v-show="!this.props_blIsLoggedIn">
 
-  <button v-on:click="" >LOGOUT</button>
+  <button type="button" v-on:click="logout" >LOGOUT</button>
 </div>
 </section>

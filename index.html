@@ -6,37 +6,18 @@
 
     <title>Test Web</title>
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
-    <script>
-
+    <script type="text/javascript">
     var provider = new firebase.auth.GoogleAuthProvider();
-    // Initialize Firebase
- var config = {
-   apiKey: "AIzaSyDdbXojbpaPVunt9Y8aW3waAyG5Wk8C0u0",
-   authDomain: "web-firebase-8903a.firebaseapp.com",
-   databaseURL: "https://web-firebase-8903a.firebaseio.com",
-   projectId: "web-firebase-8903a",
-   storageBucket: "web-firebase-8903a.appspot.com",
-   messagingSenderId: "553153415320"
- };
-
-      firebase.initializeApp(config);
-      firebase.auth().signInWithPopup(provider).then(function(result) {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-        // ...
-      }).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
-      });
-    </script>
+      // Initialize Firebase
+    var config = {
+     apiKey: "AIzaSyDdbXojbpaPVunt9Y8aW3waAyG5Wk8C0u0",
+     authDomain: "web-firebase-8903a.firebaseapp.com",
+     databaseURL: "https://web-firebase-8903a.firebaseio.com",
+     projectId: "web-firebase-8903a",
+     storageBucket: "web-firebase-8903a.appspot.com",
+     messagingSenderId: "553153415320"
+    };
+  </script>
   </head>
   <body class="bobyin"  >
     <div id="app">
