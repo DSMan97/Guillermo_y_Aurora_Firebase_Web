@@ -58,9 +58,7 @@ export default {
     this.sTituloRegistro="Login!"
 },
 clickDeBotonLogearseGoogle:function (event) {
-
-
-    firebase.initializeApp(config);
+  console.log("Entra en logueo de Google ");
   firebase.auth().signInWithPopup(provider).then(function(result) {
     // This gives you a Google Access Token. You can use it to access the Google API.
     var token = result.credential.accessToken;
@@ -97,9 +95,12 @@ clickDeBotonLogearse:function (event) {
 
 },
   logout: function(event){
+    this.blLoginVisible=true;
+      this.sTituloRegistro="Login!"
+       firebase.auth().signOut()
     console.log("Entra ");
-    firebase.auth().signOut()
-    this.loginregistroclass=true;
+
+
 
   },
 
