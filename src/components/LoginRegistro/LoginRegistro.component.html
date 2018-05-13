@@ -1,7 +1,7 @@
 
 <section class="login-registro">
   <!-- <h1>Bienvenido!</h1> -->
-<div class="loginregistroclass"  v-show="this.props_blIsLoggedIn">
+<div class="loginregistroclass"  v-show="!this.props_blIsLoggedIn">
 
 
   <div class="preRegister" v-show="!blLoginVisible" >
@@ -49,7 +49,7 @@
   </div>
 
 </div>
-<div class="logged" v-show="!this.props_blIsLoggedIn">
+<div class="logged" v-show="this.props_blIsLoggedIn">
 
   <button type="button" v-on:click="logout" >LOGOUT</button>
 </div>

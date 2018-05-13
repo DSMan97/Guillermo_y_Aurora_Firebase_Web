@@ -58,23 +58,27 @@ export default {
     this.sTituloRegistro="Login!"
 },
 clickDeBotonLogearseGoogle:function (event) {
-  console.log("Entra en logueo de Google ");
-  firebase.auth().signInWithPopup(provider).then(function(result) {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    var token = result.credential.accessToken;
-    // The signed-in user info.
-    var user = result.user;
-    // ...
-  }).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    // ...
-  });
+  var provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithPopup(provider).then(function(result) {
+  // This gives you a Google Access Token. You can use it to access the Google API.
+  var token = result.credential.accessToken;
+  // The signed-in user info.
+  var user = result.user;
+
+  var docRef = firebase.firestore().collection("Perfiles")
+  docRef.doc(user.uid+"").set({email: user.email, nombre:"Guille"})
+  alert("Bienvenido!! "+ user.email);
+  // ...
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+});
 
 },
 clickDeBotonLogearse:function (event) {
@@ -95,13 +99,14 @@ clickDeBotonLogearse:function (event) {
 
 },
   logout: function(event){
-    this.blLoginVisible=true;
-      this.sTituloRegistro="Login!"
-       firebase.auth().signOut()
-    console.log("Entra ");
-
-
-
+    firebase.auth().signOut().then(function() {
+console.log("Entra ");
+ // Sign-out successful.
+}).catch(function(error) {
+ // An error happened.
+});
+this.blLoginVisible=true;
+this.sTituloRegistro="Login!"
   },
 
   }

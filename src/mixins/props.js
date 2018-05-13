@@ -6,7 +6,7 @@ checkLoggedInFirebase (){
   },
   data(){
     return{
-      props_blIsLoggedIn:true
+      props_blIsLoggedIn:false
     }
   }
 }

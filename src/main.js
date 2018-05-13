@@ -6,17 +6,19 @@ import router from './router'
 import firebase from 'firebase'
 import props from './mixins/props'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false 
+
 // Initialize Firebase
 var config = {
-  apiKey: 'AIzaSyDdbXojbpaPVunt9Y8aW3waAyG5Wk8C0u0',
-  authDomain: 'web-firebase-8903a.firebaseapp.com',
-  databaseURL: 'https://web-firebase-8903a.firebaseio.com',
-  projectId: 'web-firebase-8903a',
-  storageBucket: 'web-firebase-8903a.appspot.com',
-  messagingSenderId: '553153415320'
+  apiKey: "AIzaSyDdbXojbpaPVunt9Y8aW3waAyG5Wk8C0u0",
+  authDomain: "web-firebase-8903a.firebaseapp.com",
+  databaseURL: "https://web-firebase-8903a.firebaseio.com",
+  projectId: "web-firebase-8903a",
+  storageBucket: "web-firebase-8903a.appspot.com",
+  messagingSenderId: "553153415320"
 };
 firebase.initializeApp(config);
+
 Vue.mixin(props)
 Vue.use(firebase)
 /* eslint-disable no-new */
