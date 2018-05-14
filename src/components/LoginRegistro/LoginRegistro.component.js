@@ -23,17 +23,7 @@ export default {
     }
   },
   created: function(){
-      // firebase.auth().onAuthStateChanged((user) => {
-      //
-      //       if(user){
-      //         this.props_blIsLoggedIn = true
-      //
-      //       }
-      //       else {
-      //         this.props_blIsLoggedIn = false
-      //       }
-      //       EventBus.$emit('loginregistro_userstatechanged', this.props_blIsLoggedIn)
-      // });
+    
       firebase.auth().onAuthStateChanged((user) => {
      var that = this
      this.props_objuser = user

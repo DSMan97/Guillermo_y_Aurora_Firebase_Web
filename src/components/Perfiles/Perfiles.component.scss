@@ -1,6 +1,19 @@
 .perfiles {
+  position: absolute;
   display: flex;
-justify-content: center;
-align-content:center;
+  align-items: center;
+  top: 750px;
+  left: auto;
+  right: auto;
+  width: auto;
+  height: auto;
 
+}
+body{
+  color: white;
+  font-size: 20px;
+}
+h1{
+    font-size: 30px;
+  color: white;
 }

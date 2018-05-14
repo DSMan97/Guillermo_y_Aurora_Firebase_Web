@@ -17,7 +17,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  height:900px;
+  height:10000px;
   width:100%;
   background-image: url('./assets/back.jpg');
   display:flex;
