@@ -31,8 +31,6 @@
   <br>
     <h1 id="h1">Bienvenido!</h1>
     <h1>Panel Login</h1>
-      <!-- <h1>{{sTituloLogin}}</h1> -->
-
       Usuario:  <br>
        <input type="text" placeholder="Usuario" v-model="sLoginEmail"> <br>
 
@@ -44,7 +42,11 @@
 >>>>>>> fd7353194888326ebdc7912986ec4e686bf2ec66 -->
 <button type="button" v-on:click="clickDeBotonLogearse" >Logearse</button>
 <button type="button" v-on:click="clickDeBotonRegistrase" >Registrarse</button>
+<br>
+<br>
 <button type="button" v-on:click="clickDeBotonLogearseGoogle" >Loguearse con Google</button>
+<br>
+<br>
 <fb:login-button data-auto-logout-link="true" scope="public_profile,email" size="large" v-on:click='clickDeBotonLogearseFacebook'></fb:login-button>
 
   </div>
