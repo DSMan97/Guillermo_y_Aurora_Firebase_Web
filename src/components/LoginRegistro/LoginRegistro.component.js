@@ -71,9 +71,7 @@ clickDeBotonLogearseFacebook: function() {
   // The signed-in user info.
   var user = result.user;
   // ...
-  var docRef = firebase.firestore().collection("Perfiles")
-  docRef.doc(user.uid+"").set({email: user.email})
-  alert("Bienvenido!! "+ user.email);
+
 }).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
@@ -97,6 +95,9 @@ function checkLoginState(event) {
             event.authResponse.accessToken);
         // Sign in with the credential from the Facebook user.
         firebase.auth().signInWithCredential(credential).catch(function(error) {
+          var docRef = firebase.firestore().collection("Perfiles")
+          docRef.doc(user.uid+"").set({email: user.email})
+          alert("Bienvenido!! "+ user.email);
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
@@ -108,11 +109,12 @@ function checkLoginState(event) {
         });
       } else {
         // User is already signed-in Firebase with the correct user.
+        this.blLogearseVisible=false;
       }
     });
   } else {
     // User is signed-out of Facebook.
-    firebase.auth().signOut();
+    logout()
   }
 }
 function isUserEqual(facebookAuthResponse, firebaseUser) {
