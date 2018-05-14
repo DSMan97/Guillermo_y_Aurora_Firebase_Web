@@ -66,70 +66,26 @@ export default {
 clickDeBotonLogearseFacebook: function() {
   var provider = new firebase.auth.FacebookAuthProvider();
   firebase.auth().signInWithPopup(provider).then(function(result) {
-  // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-  var token = result.credential.accessToken;
-  // The signed-in user info.
-  var user = result.user;
-  // ...
+// This gives you a Google Access Token. You can use it to access the Google API.
+var token = result.credential.accessToken;
+// The signed-in user info.
+var user = result.user;
 
+var docRef = firebase.firestore().collection("Perfiles")
+docRef.doc(user.uid+"").set({email: user.email})
+alert("Bienvenido!! "+ user.email);
+// ...
 }).catch(function(error) {
-  // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  // The email of the user's account used.
-  var email = error.email;
-  // The firebase.auth.AuthCredential type that was used.
-  var credential = error.credential;
-  // ...
+// Handle Errors here.
+var errorCode = error.code;
+var errorMessage = error.message;
+// The email of the user's account used.
+var email = error.email;
+// The firebase.auth.AuthCredential type that was used.
+var credential = error.credential;
+// ...
 });
-FB.Event.subscribe('auth.authResponseChange', checkLoginState);
-function checkLoginState(event) {
-  if (event.authResponse) {
-    // User is signed-in Facebook.
-    var unsubscribe = firebase.auth().onAuthStateChanged(function(firebaseUser) {
-      unsubscribe();
-      // Check if we are already signed-in Firebase with the correct user.
-      if (!isUserEqual(event.authResponse, firebaseUser)) {
-        // Build Firebase credential with the Facebook auth token.
-        var credential = firebase.auth.FacebookAuthProvider.credential(
-            event.authResponse.accessToken);
-        // Sign in with the credential from the Facebook user.
-        firebase.auth().signInWithCredential(credential).catch(function(error) {
-          var docRef = firebase.firestore().collection("Perfiles")
-          docRef.doc(user.uid+"").set({email: user.email})
-          alert("Bienvenido!! "+ user.email);
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          // The email of the user's account used.
-          var email = error.email;
-          // The firebase.auth.AuthCredential type that was used.
-          var credential = error.credential;
-          // ...
-        });
-      } else {
-        // User is already signed-in Firebase with the correct user.
-        this.blLogearseVisible=false;
-      }
-    });
-  } else {
-    // User is signed-out of Facebook.
-    logout()
-  }
-}
-function isUserEqual(facebookAuthResponse, firebaseUser) {
-  if (firebaseUser) {
-    var providerData = firebaseUser.providerData;
-    for (var i = 0; i < providerData.length; i++) {
-      if (providerData[i].providerId === firebase.auth.FacebookAuthProvider.PROVIDER_ID &&
-          providerData[i].uid === facebookAuthResponse.userID) {
-        // We don't need to re-auth the Firebase connection.
-        return true;
-      }
-    }
-  }
-  return false;
-}
+
 
 },
 clickDeBotonLogearseGoogle:function (event) {

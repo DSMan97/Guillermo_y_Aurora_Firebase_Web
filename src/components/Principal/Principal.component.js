@@ -4,9 +4,8 @@ import { EventBus } from '../../Events/events_bus'
 
 export default {
   name: 'Principal',
-  components: {
-LoginRegistro : 'loginregistro'
-  },
+  components: {'loginregistro':LoginRegistro,
+            'Perfiles':Perfiles },
   props: [],
   data () {
     return {

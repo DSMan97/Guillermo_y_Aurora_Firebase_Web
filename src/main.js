@@ -14,7 +14,7 @@ Vue.config.productionTip = false
       appId      : '1950326645279831',
       cookie     : true,
       xfbml      : true,
-      version    : 'v2.6'
+      version    : 'v3.0'
     });
     FB.AppEvents.logPageView();
 
