@@ -14,7 +14,11 @@ export default {
       sRegisterEmail:"",
       sRegisterPass:"",
       sLoginEmail:"",
-      sLoginPass:""
+      sLoginPass:"",
+      iAge:"",
+      sNombre:"",
+      sApellido:""
+
     }
   },
   created: function(){
@@ -43,15 +47,17 @@ export default {
       this.sTituloLogin="LOGIN";
   },
  clickDeBotonRegistrarseAceptar:function(event) {
-
+   var that=this
    firebase.auth().createUserWithEmailAndPassword(this.sRegisterEmail, this.sRegisterPass).then(function(user) {
      var docRef = firebase.firestore().collection("Perfiles")
-     docRef.doc(user.uid+"").set({email: user.email})
+     docRef.doc(user.uid+"").set({email: user.email, Nombre: that.sNombre, Apellido: that.sApellido, Edad: that.iAge})
+
   // Handle Errors here.
   alert("Te has Registrado correctamente");
   //var errorCode = error.code;
 //  var errorMessage = error.message;
   // ...
+
 
 })(function ( error){
     alert("No Te has Registrado correctamente");
@@ -59,7 +65,7 @@ export default {
   },
 );
 
-  },
+},
   clickDeBotonCancelar:function(event){
     //console.log("!!!!!!!!!!!!!!!!!!!");
     this.blLoginVisible=true;

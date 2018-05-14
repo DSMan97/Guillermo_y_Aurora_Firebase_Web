@@ -9,7 +9,14 @@ import firestore from 'firebase/firestore'
 
 Vue.config.productionTip = false
 
-
+// var storage = firebase.storage();
+// var storageRef = storage.ref();
+// storageRef.child('images/stars.jpg').getDownloadURL().then(function(url) {
+// var img = document.getElementById('myimg');
+//   img.src = url;
+// }).catch(function(error) {
+//   // Handle any errors
+// });
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyDdbXojbpaPVunt9Y8aW3waAyG5Wk8C0u0",

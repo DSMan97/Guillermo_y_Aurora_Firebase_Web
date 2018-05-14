@@ -1,10 +1,11 @@
+import firebase, {firestore} from 'firebase'
+
 export default {
   name: 'pagina-intermedia',
-  components: {}, 
+  components: {},
   props: [],
   data () {
     return {
-
     }
   },
   computed: {
@@ -15,5 +16,5 @@ export default {
   },
   methods: {
 
-  }
+      }
 }
