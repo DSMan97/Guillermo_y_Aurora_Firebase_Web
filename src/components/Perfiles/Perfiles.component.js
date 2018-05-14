@@ -65,7 +65,8 @@ export default {
       descargarRip: function () {
         console.log("acaba fun perfiles");
         var that = this
-        firebase.firestore().collection("rip").get().then(function(querySnapshot) {
+        firebase.firestore().collection("rip").get().onSnapshot(function(querySnapshot) {
+            that.rip = []
       querySnapshot.forEach(function(doc) {
           // doc.data() is never undefined for query doc snapshots
           // console.log(doc.id, " => ", doc.data());
