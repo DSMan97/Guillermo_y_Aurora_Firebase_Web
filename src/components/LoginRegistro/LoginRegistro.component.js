@@ -3,6 +3,7 @@ import firestore from 'firebase/firestore'
 import paginaIntermedia from '@/components/paginaIntermedia'
 
 import { EventBus } from '../../Events/events_bus'
+
 export default {
   name: 'login-registro',
   components: {'paginaIntermedia' : paginaIntermedia},
@@ -22,18 +23,42 @@ export default {
     }
   },
   created: function(){
+      // firebase.auth().onAuthStateChanged((user) => {
+      //
+      //       if(user){
+      //         this.props_blIsLoggedIn = true
+      //
+      //       }
+      //       else {
+      //         this.props_blIsLoggedIn = false
+      //       }
+      //       EventBus.$emit('loginregistro_userstatechanged', this.props_blIsLoggedIn)
+      // });
       firebase.auth().onAuthStateChanged((user) => {
+     var that = this
+     this.props_objuser = user
+     if(user){
+       this.props_blIsLoggedIn = true
+       var docRef = firebase.firestore().collection("Perfiles").doc(user.uid+"")
+         docRef.get().then(function(doc) {
+         if (doc.exists) {
+           console.log("Document data:", doc.data());
+           that.props_docPerfil = new Perfiles(doc.id, doc.data());
 
-            if(user){
-              this.props_blIsLoggedIn = true
 
-            }
-            else {
-              this.props_blIsLoggedIn = false
-            }
-            EventBus.$emit('loginregistro_userstatechanged', this.props_blIsLoggedIn)
-      });
-  },
+         } else {
+           // doc.data() will be undefined in this case
+           console.log("No existe ese documento");
+         }
+       }).catch(function(error) {
+         console.log("Error getting document:", error);
+       });
+     }else {
+       this.props_blIsLoggedIn = false
+     }
+     EventBus.$emit('loginregistro_userstatechanged',this.props_blIsLoggedIn)
+   })
+ },
   computed: {
 
   },

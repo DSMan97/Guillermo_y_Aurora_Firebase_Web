@@ -1,5 +1,21 @@
 
 <section class="perfiles">
+<div class="">
   <h1>perfiles Component</h1>
-</section>
+  <br>
 
+  <div class="card" v-for="per in Perfiles">
+
+    <a>
+  Nombre:  {{per.name}}
+  <br>
+  Apellido: {{per.apellido}}
+  <br>
+  Edad:  {{per.edad}}
+  <br>
+  E-mail:  {{per.email}}
+
+    </a>
+  </div>
+  </div>
+</section>

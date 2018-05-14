@@ -15,7 +15,7 @@
 
               NOMBRE:  <br>
 
-              <input type="text" placeholder="Nombre" v-model="sNombre"> <br>
+              <input type="text" placeholder="Nombre" v-model="sNombre" <br>
               <br>
 
               Apellido:  <br>
@@ -34,7 +34,7 @@
 
               <input type="password" placeholder="Confirmar Contraseña" name="Contraseña"> <br>
                 <br>
-        <button type="button" v-on:click="clickDeBotonRegistrarseAceptar">Registrarse</button>
+        <button type="button" v-on:click="clickDeBotonRegistrarseAceptar" >Registrarse</button>
         <button type="button" v-on:click="clickDeBotonCancelar">Cancelar</button>
 
 
@@ -63,16 +63,17 @@
 <button type="button" v-on:click="clickDeBotonRegistrase" >Registrarse</button>
 <br>
 <br>
-<button type="button" v-on:click="clickDeBotonLogearseGoogle" >Loguearse con Google</button>
-<br>
-<br>
-<button type="button" v-on:click="clickDeBotonLogearseFacebook" >Loguearse con Facebook</button>
+<input type="image" v-on:click="clickDeBotonLogearseGoogle"  src="https://firebasestorage.googleapis.com/v0/b/web-firebase-8903a.appspot.com/o/buttons%2Fglicon.png?alt=media&token=278e7e24-c59e-4a3a-9661-c6c11872b4fd" height="40px" width="40px" >
+<!-- Loguearse con Google -->
+
+<input type="image" v-on:click="clickDeBotonLogearseFacebook" src="https://firebasestorage.googleapis.com/v0/b/web-firebase-8903a.appspot.com/o/buttons%2Ffbicon.png?alt=media&token=96d3920c-8f45-41ab-899f-9f31ba779eee"  height="49px" width="49px">
   </body>
   </div>
 
 </div>
 <div class="logged" v-show="this.props_blIsLoggedIn">
 <pagina-intermedia></pagina-intermedia>
+<perfiles></perfiles>
   <button type="button" v-on:click="logout" >LOGOUT</button>
 </div>
 </section>
