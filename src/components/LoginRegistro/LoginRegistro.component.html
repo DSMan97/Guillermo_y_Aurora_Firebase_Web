@@ -1,7 +1,7 @@
 
 <section class="login-registro">
   <!-- <h1>Bienvenido!</h1> -->
-<div class="loginregistroclass"  v-show="this.props_blIsLoggedIn">
+<div class="loginregistroclass"  v-show="!this.props_blIsLoggedIn">
 
 
   <div class="preRegister" v-show="!blLoginVisible" >
@@ -45,11 +45,12 @@
 <button type="button" v-on:click="clickDeBotonLogearse" >Logearse</button>
 <button type="button" v-on:click="clickDeBotonRegistrase" >Registrarse</button>
 <button type="button" v-on:click="clickDeBotonLogearseGoogle" >Loguearse con Google</button>
+<fb:login-button data-auto-logout-link="true" scope="public_profile,email" size="large" v-on:click='clickDeBotonLogearseFacebook'></fb:login-button>
 
   </div>
 
 </div>
-<div class="logged" v-show="!this.props_blIsLoggedIn">
+<div class="logged" v-show="this.props_blIsLoggedIn">
 
   <button type="button" v-on:click="logout" >LOGOUT</button>
 </div>
