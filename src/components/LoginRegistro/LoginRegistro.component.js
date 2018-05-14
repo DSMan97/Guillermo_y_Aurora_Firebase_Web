@@ -1,9 +1,11 @@
 import firebase from 'firebase'
 import firestore from 'firebase/firestore'
+import paginaIntermedia from '@/components/paginaIntermedia'
+
 import { EventBus } from '../../Events/events_bus'
 export default {
   name: 'login-registro',
-  components: {},
+  components: {'paginaIntermedia' : paginaIntermedia},
   props: [],
   data () {
     return {
